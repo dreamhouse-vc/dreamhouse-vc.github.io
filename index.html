@@ -19,10 +19,41 @@
         align-items: center;
         flex-direction: column;
       }
+
+      .hypebeast h1::before,
+      .hypebeast h1::after {
+        display: inline-block;
+        opacity: 0;
+        transition: transform 0.3s, opacity 0.2s;
+      }
+
+      .hypebeast h1::before {
+        margin-right: 10px;
+        content: '[';
+        transform: translateX(20px);
+      }
+
+      .hypebeast h1::after {
+        margin-left: 10px;
+        content: ']';
+        transform: translateX(-20px);
+      }
+
+      .hypebeast h1:hover::before,
+      .hypebeast h1:hover::after,
+      .hypebeast h1:focus::before,
+      .hypebeast h1:focus::after {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+
+      .hypebeast h1 {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <main class="hero">
+    <main class="hero hypebeast">
       <h1>dreamhouse.</h1>
     </main>
   </body>
